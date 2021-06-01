@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;           /* for padding and border to be adjusted in the already given size */
+}
+
+.navbar {
+    width: 100vw;
+    height: 12vh;
+    background-color: rgb(32,33,49);
+    display: flex;
+}
+.ticket-container {
+    height: 88vh;
+    width: 100vw;
+    background: linear-gradient(to right, #d7d2cc, #304352);
+    position: relative;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5vh;
+    flex-wrap: wrap;
+}
+.filter-container, .add-delete-container{
+    margin-top: 2vh;
+    margin-left: 8vw;
+    height: 8vh;
+    background-color: rgb(13, 14, 34);
+    border-radius: 3px;
+
+}
+
+.filter-container{
+    width: 18vw;
+    min-width: 18vw;
+    display:flex;
+}
+.add-delete-container{
+    min-width: 8vw;
+    display:flex;
+}
+
+.filter {
+    height: 100%;
+    width: 25% ;
+}
+
+.filter:hover {
+    background-color: rgb(32,33,49);
+    cursor: pointer;
+}
+
+.pink-color-btn,
+.blue-color-btn, 
+.green-color-btn,
+.yellow-color-btn {
+    display: block;
+    height: 40%;
+    width: 40%;
+    border-radius: 3px;
+    margin-top: calc(8vh * 0.3) ;
+    margin-bottom: calc(8vh * 0.3);
+    margin-left: calc(4.5vw * 0.3);
+    margin-right: calc(4.5vw * 0.3);
+}
+
+.pink-color-btn {
+    background-color: pink;
+}
+
+.blue-color-btn {
+    background-color: blue;
+}
+
+.green-color-btn{
+    background-color: green;
+}
+
+.yellow-color-btn{
+    background-color: yellow;
+}
+
+.filter.active{
+background-color: rgb(32,33,49);
+}
+
+.add, .delete{
+    height: 100%;
+    width: 50%;
+}
+
+.add:hover,.delete:hover{
+    background-color: rgb(32,33,49);
+    cursor: pointer;
+}
+
+.action-btn {
+    display: block;
+    height: 40%;
+    width: 40%;
+    margin-top: calc(8vh * 0.3);
+    margin-bottom: calc(8vh * 0.3);
+    margin-left: calc(4.5vw * 0.3);
+    margin-right: calc(4.5vw * 0.3);
+    background-color: white;
+    padding-left: 3%;
+    border-radius: 3px;
+}
+
+.modal-parent{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+}
+
+.transparent-modal{
+    position: absolute;
+    height: 100%;
+    width: 0vw;
+    right: 45vw;
+    top: 0;
+    backdrop-filter: blur(10px);
+}
+
+.add-task{
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    height: 15%;
+    width: 100%;
+    text-decoration: underline;
+    /* border-bottom: 3px solid rgb(173, 173, 173); */
+    /* box-shadow: 0px 10px 50px grey; */
+    background-color: white;
+    font-size: 45px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px 2px 5px grey;
+}
+.input-modal{
+    margin-top: 2vh;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    outline: none;
+    padding: 5vw;
+    padding-bottom: 2vw;
+    /* border-top: 4px solid rgb(180, 178, 178); */
+}
+
+.modal-confirmation{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: white;
+}
+   
+   .btn-grad {background-image: linear-gradient(to right, #4b6cb7 0%, #182848  51%, #4b6cb7  100%)}
+   .btn-grad {
+      margin: 10px;
+      padding: 15px 45px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;            
+      box-shadow: 0 0 20px #eee;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .btn-grad:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+   
+.save-btn{
+    margin-left: 23rem; 
+}
+
+
+.cancel-btn{
+    margin-left: 1rem;
+    padding: 15px 35px;
+}
+
+.priority-list{
+    height: 24vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-pink-filter, .priority-color-pink{
+    background-color: pink;
+}
+
+.modal-blue-filter, .priority-color-blue{
+    background-color: blue;
+}
+.modal-green-filter, .priority-color-green{
+    background-color: green;
+}
+
+.modal-yellow-filter, .priority-color-yellow{
+    background-color: yellow;
+}
+
+.modal-filter{
+    height: 17vh;
+    width: 20vh;
+    border-radius: 30px 0px 0px 0px;
+}
+
+.modal-filter:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.input-modal, .add-task, .modal-confirmation, .modal-parent{
+    background-color: #E1EBEE;
+  
+  }
+
+.textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    background-color: #444;
+    color: white;
+    border-radius: 6px;
+}
+
+.ticket{
+    height: 11rem;
+    width: 17rem;
+    background-color: #444;
+    margin-bottom: 2vh;
+    border-radius: 21px 21px 0px 0px;
+ 
+}
+
+.priority-color {
+    height: 1.25rem;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+
+.ticket-id{
+    height: 15%;
+    width: 100%;
+    padding: 3%;
+    padding-bottom: 1.5rem;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.task-container {
+    height: calc(100% - 3.25rem);
+    width: 100%;
+    color: #fff;
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.ticket.active {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 1px 3px rgb(32,33,49);
+    
+}
+
+.help-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+    top: 4vh;
+    right: 7rem;
+    height: 4vh;
+    width: 2.5vw;
+}
+.help-btn:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.info{
+    padding: 2vh;
+    height: 80vh;
+    width: 20vw;
+    background-color: #E1EBEE;
+    position: fixed;
+    top: 5.5vh;
+    right: 8rem;
+    border-radius: 10px;
+    overflow-x: wrap;
+}
+
+.material-icons.help{
+    font-size: 30px;
+}
+.zira{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1EBEE;
+    /* background-image: linear-gradient(rgb(245, 159, 159), #15f4ee); */
+    color:rgb(32,33,49);
+    margin-left: 7vw;
+    margin-top: 2vh;
+    width: 20rem;
+    height: 8vh;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.delete-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3vh;
+    right: 2rem;
+    height: 6.5vh;
+    width: 6.5vh;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.delete-all:hover{
+    transform: scale(1.2);
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.material-icons.delete2 {
+    font-size: 40px;
+    color: white;
+}
